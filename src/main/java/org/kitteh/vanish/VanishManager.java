@@ -254,7 +254,8 @@ public final class VanishManager {
             this.plugin.getLogger().info(vanishingPlayerName + " reappeared.");
         }
         if (effects) {
-            final Location oneUp = vanishingPlayer.getLocation().add(0, 1, 0);
+        	// DyrtCraft start
+            /*final Location oneUp = vanishingPlayer.getLocation().add(0, 1, 0);
             if (VanishPerms.canEffectSmoke(vanishingPlayer)) {
                 this.effectSmoke(vanishingPlayer.getLocation());
             }
@@ -269,7 +270,8 @@ public final class VanishManager {
             }
             if (VanishPerms.canEffectBats(vanishingPlayer)) {
                 this.effectBats(oneUp);
-            }
+            }*/
+        	// DyrtCraft end
         }
         this.plugin.getServer().getPluginManager().callEvent(new VanishStatusChangeEvent(vanishingPlayer, vanishing));
         vanishingPlayer.sendPluginMessage(this.plugin, "vanishStatus", vanishing ? new byte[] { 0x01 } : new byte[] { 0x00 });
